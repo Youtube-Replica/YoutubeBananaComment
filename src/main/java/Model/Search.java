@@ -3,6 +3,20 @@ package Model;
 import com.arangodb.ArangoCursor;
 import com.arangodb.ArangoDB;
 import com.arangodb.ArangoDBException;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import com.arangodb.ArangoCollection;
+import com.arangodb.ArangoCursor;
+import com.arangodb.ArangoDB;
+import com.arangodb.ArangoDBException;
+import com.arangodb.entity.BaseDocument;
+import com.arangodb.entity.CollectionEntity;
+import com.arangodb.model.AqlQueryOptions;
+import com.arangodb.util.MapBuilder;
+import com.arangodb.velocypack.VPackSlice;
+import com.arangodb.velocypack.exception.VPackException;
 import com.arangodb.entity.BaseDocument;
 import com.arangodb.util.MapBuilder;
 import org.json.simple.JSONArray;
@@ -16,9 +30,10 @@ public class Search {
     //Search for Videos by title and for Channel by name
     public static String getSearch(String s) {
         ArangoDB arangoDB = new ArangoDB.Builder().build();
-        String dbName = "subscriptions";
+        String dbName = "scalable";
+
         //First get by channel name
-        String collectionName = "Channels";
+        String collectionName = "Comments";
         JSONObject searchObjectTotal = new JSONObject();
 
         System.out.println("String we got:" + s);
@@ -94,5 +109,6 @@ public class Search {
 
 
     }
+
 
 }
