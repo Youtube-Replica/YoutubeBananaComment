@@ -1,5 +1,4 @@
-import Commands.Command;
-import Commands.GetComment;
+import commands.Command;
 import com.rabbitmq.client.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
 public class CommentService {
-    private static final String RPC_QUEUE_NAME = "search-request";
+    private static final String RPC_QUEUE_NAME = "comment-request";
 
     public static void main(String [] argv) {
 

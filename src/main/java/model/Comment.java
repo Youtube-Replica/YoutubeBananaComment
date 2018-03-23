@@ -1,29 +1,13 @@
-package Model;
+package model;
 
-import com.arangodb.ArangoCursor;
 import com.arangodb.ArangoDB;
 import com.arangodb.ArangoDBException;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 
-import com.arangodb.ArangoCollection;
-import com.arangodb.ArangoCursor;
-import com.arangodb.ArangoDB;
-import com.arangodb.ArangoDBException;
 import com.arangodb.entity.BaseDocument;
-import com.arangodb.entity.CollectionEntity;
-import com.arangodb.model.AqlQueryOptions;
-import com.arangodb.util.MapBuilder;
-import com.arangodb.velocypack.VPackSlice;
-import com.arangodb.velocypack.exception.VPackException;
-import com.arangodb.entity.BaseDocument;
-import com.arangodb.util.MapBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Comment {
 
@@ -157,6 +141,39 @@ public class Comment {
 //
 //
 //    }
+
+    public static String createComment(int video_id, String text, JSONArray likes, JSONArray dislikes, int user_id, JSONArray mentions, JSONArray replies){
+        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String dbName = "scalable";
+        String collectionName = "comments";
+        BaseDocument myObject = new BaseDocument();
+        myObject.addAttribute("video_id",video_id);
+        myObject.addAttribute("text",text);
+        myObject.addAttribute("likes",likes);
+        myObject.addAttribute("dislikes",dislikes);
+        myObject.addAttribute("user",user_id);
+        myObject.addAttribute("mentions",mentions);
+        myObject.addAttribute("replies",replies);
+        try {
+            arangoDB.db(dbName).collection(collectionName).insertDocument(myObject);
+            System.out.println("Document created");
+        } catch (ArangoDBException e) {
+            System.err.println("Failed to create document. " + e.getMessage());
+        }
+        return "Document created";
+    }
+
+    public static String deleteCommentByID(int id){
+        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String dbName = "scalable";
+        String collectionName = "comments";
+        try {
+        arangoDB.db(dbName).collection(collectionName).deleteDocument(""+id);
+        }catch (ArangoDBException e){
+            System.err.println("Failed to delete document. " + e.getMessage());
+        }
+        return "Comment Deleted";
+    }
 
 
 }
