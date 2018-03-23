@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87acbc6e-8dd7-46ae-a64e-2ff48f1259ef" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/commands/CreateComment.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/commands/DeleteComment.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/Command.java" afterPath="$PROJECT_DIR$/src/main/java/commands/Command.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/GetComment.java" afterPath="$PROJECT_DIR$/src/main/java/commands/GetComment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CommentService.java" afterPath="$PROJECT_DIR$/src/main/java/CommentService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/model/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands/Command.class" afterPath="$PROJECT_DIR$/target/classes/Commands/Command.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Commands/Get/GetSearch.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Search.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SearchService$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SearchService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/DeleteComment.java" afterPath="$PROJECT_DIR$/src/main/java/commands/DeleteComment.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/model/Comment.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,12 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CommentService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommentService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="189">
+              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,8 +31,8 @@
       <file leaf-file-name="CreateComment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateComment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="45" column="105" lean-forward="false" selection-start-line="45" selection-start-column="105" selection-end-line="45" selection-end-column="105" />
+            <state relative-caret-position="-2">
+              <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,8 +43,8 @@
       <file leaf-file-name="DeleteComment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteComment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+            <state relative-caret-position="261">
+              <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,26 +62,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Comment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="172" column="48" lean-forward="false" selection-start-line="172" selection-start-column="48" selection-end-line="172" selection-end-column="48" />
+            <state relative-caret-position="403">
+              <caret line="191" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getCommentByID#0;class#Comment#0" expanded="false" />
                 <element signature="e#2569#2622#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetComment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/GetComment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -422,13 +402,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/model/Comment.java</url>
-          <line>14</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
@@ -455,7 +428,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="46" column="41" lean-forward="true" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -517,7 +492,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="44" column="51" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -580,7 +557,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -590,7 +569,6 @@
           <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getCommentByID#0;class#Comment#0" expanded="false" />
             <element signature="e#2569#2622#0" expanded="false" />
           </folding>
         </state>
@@ -608,7 +586,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="46" column="41" lean-forward="true" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +627,6 @@
           <caret line="74" column="105" lean-forward="false" selection-start-line="74" selection-start-column="105" selection-end-line="74" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getCommentByID#0;class#Comment#0" expanded="false" />
             <element signature="e#2569#2622#0" expanded="false" />
           </folding>
         </state>
@@ -682,7 +661,6 @@
           <caret line="74" column="105" lean-forward="false" selection-start-line="74" selection-start-column="105" selection-end-line="74" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getCommentByID#0;class#Comment#0" expanded="false" />
             <element signature="e#2569#2622#0" expanded="false" />
           </folding>
         </state>
@@ -692,7 +670,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="44" column="51" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -742,18 +722,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/GetComment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateComment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="45" column="105" lean-forward="false" selection-start-line="45" selection-start-column="105" selection-end-line="45" selection-end-column="105" />
+        <state relative-caret-position="-2">
+          <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -762,31 +744,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteComment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        <state relative-caret-position="261">
+          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/GetComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="172" column="48" lean-forward="false" selection-start-line="172" selection-start-column="48" selection-end-line="172" selection-end-column="48" />
+        <state relative-caret-position="403">
+          <caret line="191" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getCommentByID#0;class#Comment#0" expanded="false" />
             <element signature="e#2569#2622#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>

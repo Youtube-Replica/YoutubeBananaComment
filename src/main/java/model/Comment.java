@@ -174,6 +174,23 @@ public class Comment {
         }
         return "Comment Deleted";
     }
-
-
+    public static String deleteReplyByID(int comment_id,int reply_id){
+        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String dbName = "scalable";
+        String collectionName = "comments";
+        BaseDocument myDocument = arangoDB.db(dbName).collection(collectionName).getDocument("" + comment_id,
+                BaseDocument.class);
+try {
+    ArrayList<JSONObject> replies = new ArrayList<>();
+     replies = (ArrayList<JSONObject>) myDocument.getAttribute("replies");
+     replies.remove(reply_id);
+    myDocument.updateAttribute("replies", replies);
+    arangoDB.db(dbName).collection(collectionName).deleteDocument("" + comment_id);
+    arangoDB.db(dbName).collection(collectionName).insertDocument(myDocument);
+}catch (ArangoDBException e){
+            System.err.println(e.getErrorMessage());
 }
+        return "Document Updated";
+        }
+
+    }
