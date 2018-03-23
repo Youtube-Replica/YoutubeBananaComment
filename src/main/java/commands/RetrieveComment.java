@@ -8,30 +8,46 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.xml.stream.events.Comment;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class GetComment extends Command {
-   public static String search_string = "";
+public class RetrieveComment extends Command {
    public void execute() {
        HashMap<String, Object> props = parameters;
 
        Channel channel = (Channel) props.get("channel");
        JSONParser parser = new JSONParser();
-       search_string = "";
+       int id = 0;
+       int video_id = 0;
+       boolean flag = false;
        try {
-           System.out.println(props);
            JSONObject body = (JSONObject) parser.parse((String) props.get("body"));
-           System.out.println(body.toString());
+           System.out.println("******xxx******");
            JSONObject params = (JSONObject) parser.parse(body.get("parameters").toString());
-           search_string = params.get("searchStr").toString();
+           System.out.println(params.toString());
+           if(params.containsKey("video_id")){
+               video_id = Integer.parseInt(params.get("video_id").toString());
+               flag = true;
+           }
+           else{
+               id = Integer.parseInt(params.get("id").toString());
+           }
        } catch (ParseException e) {
            e.printStackTrace();
        }
+       System.out.println("Passed!");
        AMQP.BasicProperties properties = (AMQP.BasicProperties) props.get("properties");
        AMQP.BasicProperties replyProps = (AMQP.BasicProperties) props.get("replyProps");
        Envelope envelope = (Envelope) props.get("envelope");
-       String response = ""; //Gets channels searched for
+       String response = "";
+       if(flag){
+           System.out.println("Get comments by VIDEO ID");
+           response = model.Comment.getCommentsByVideoID(video_id);
+       }
+       else{
+           response = model.Comment.getCommentByID(id);
+       }
        try {
            channel.basicPublish("", properties.getReplyTo(), replyProps, response.getBytes("UTF-8"));
            channel.basicAck(envelope.getDeliveryTag(), false);
