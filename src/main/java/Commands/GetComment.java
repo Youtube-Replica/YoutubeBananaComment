@@ -1,4 +1,4 @@
-package Commands.Get;
+package Commands;
 
 
 import Commands.Command;
