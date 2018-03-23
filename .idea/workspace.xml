@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87acbc6e-8dd7-46ae-a64e-2ff48f1259ef" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/DeleteComment.java" afterPath="$PROJECT_DIR$/src/main/java/commands/DeleteComment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/commands/UpdateComment.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/model/Comment.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,10 +32,23 @@
       <file leaf-file-name="CreateComment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateComment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+            <state relative-caret-position="75">
+              <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Comment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2569#2622#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,8 +57,8 @@
       <file leaf-file-name="DeleteComment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteComment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+            <state relative-caret-position="241">
+              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,24 +66,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
+      <file leaf-file-name="GetComment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/GetComment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="105">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Comment.java">
+      <file leaf-file-name="UpdateComment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/UpdateComment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="191" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+            <state relative-caret-position="43">
+              <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2569#2622#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -83,6 +96,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>package model\;\n\nimport com\.arangodb\.ArangoDB\;\nimport com\.arangodb\.ArangoDBException\;\n\nimport com\.arangodb\.entity\.BaseDocument\;\nimport org\.json\.simple\.JSONArray\;\nimport org\.json\.simple\.JSONObject\;\n\nimport java\.util\.ArrayList\;\n\npublic class Comment \{\n\n    public static String getCommentByID\(int id\) \{\n        ArangoDB arangoDB \= new ArangoDB\.Builder\(\)\.build\(\)\;\n        String dbName \= \&quot;scalable\&quot;\;\n        String collectionName \= \&quot;Comments\&quot;\;\n        JSONObject commentObjectM \= new JSONObject\(\)\;\n        JSONArray commentArray \= new JSONArray\(\)\;\n        \/\/Read Document\n        \/\/haygeely id harod b list ids\n        try \{\n            BaseDocument myDocument \= arangoDB\.db\(dbName\)\.collection\(collectionName\)\.getDocument\(\&quot;\&quot; \+ id\,\n                    BaseDocument\.class\)\;\n\n            commentObjectM\.put\(\&quot;VideoID\&quot;\,myDocument\.getAttribute\(\&quot;video_id \&quot;\)\)\;\n            commentObjectM\.put\(\&quot;Text\&quot;\,myDocument\.getAttribute\(\&quot;text\&quot;\)\)\;\n            commentObjectM\.put\(\&quot;Likes\&quot;\,myDocument\.getAttribute\(\&quot;likes\&quot;\)\)\;\n            commentObjectM\.put\(\&quot;Dislikes\&quot;\,myDocument\.getAttribute\(\&quot;dislikes\&quot;\)\)\;\n            commentObjectM\.put\(\&quot;ChannelID\&quot;\,myDocument\.getAttribute\(\&quot;user\&quot;\)\)\;\n\n            ArrayList\&lt;Integer\&gt; mentionsArray \= new ArrayList\&lt;\&gt;\(\)\;\n            mentionsArray \= \(ArrayList\) myDocument\.getAttribute\(\&quot;mentions\&quot;\)\;\n            ArrayList\&lt;JSONObject\&gt; mentionsNamesArray \= new ArrayList\&lt;\&gt;\(\)\;\n\n            for \(int i \= 0\; i \&lt; mentionsArray\.size\(\)\; i\+\+\) \{\n                try \{\n                    BaseDocument myDocument2 \= arangoDB\.db\(dbName\)\.collection\(\&quot;Channels\&quot;\)\.getDocument\(\&quot;\&quot; \+ mentionsArray\.get\(i\)\,\n                            BaseDocument\.class\)\;\n                    JSONObject channelObject \= new JSONObject\(\)\;\n                    JSONObject info \= new JSONObject\(\)\;\n                    info\.put\(\&quot;Info\&quot;\,myDocument2\.getAttribute\(\&quot;info\&quot;\)\)\;\n                    String name \= \&quot;\&quot;\; \/\/info\.get\(\&quot;name\&quot;\)\;\n                    String profpic \= \&quot;\&quot;\; \/\/info\.get\(\&quot;profile_pic\&quot;\)\;\n                    channelObject\.put\(\&quot;Name\&quot;\, name\)\;\n                    channelObject\.put\(\&quot;Profile Picture\&quot;\, profpic\)\;\n                    mentionsNamesArray\.add\(channelObject\)\;\n                \}\n                catch \(ArangoDBException e\) \{\n                    System\.err\.println\(\&quot;Failed to get document\: myKey\; \&quot; \+ e\.getMessage\(\)\)\;\n                \}\n            \}\n            commentObjectM\.put\(\&quot;mentions\&quot;\,mentionsNamesArray\)\;\n        \} catch \(ArangoDBException e\) \{\n            System\.err\.println\(\&quot;Failed to get document\: myKey\; \&quot; \+ e\.getMessage\(\)\)\;\n        \}\n\n\n        return commentObjectM\.toString\(\)\;\n\n    \}\n    \/\/Comment for Videos by title and for Channel by name\n\/\/    public static String getSearch\(String s\) \{\n\/\/        ArangoDB arangoDB \= new ArangoDB\.Builder\(\)\.build\(\)\;\n\/\/        String dbName \= \&quot;scalable\&quot;\;\n\/\/\n\/\/        \/\/First get by channel name\n\/\/        String collectionName \= \&quot;Comments\&quot;\;\n\/\/        JSONObject searchObjectTotal \= new JSONObject\(\)\;\n\/\/\n\/\/        System\.out\.println\(\&quot;String we got\:\&quot; \+ s\)\;\n\/\/        try \{\n\/\/            String query \= \&quot;FOR doc IN Comments\\n\&quot; \+\n\/\/                    \&quot;        FILTER doc\.\`Name\` \=\= \@value\\n\&quot; \+\n\/\/\/\/                    \&quot;        FILTER CONTAINS\(doc\.\`Name\`\, \@value\)\&quot; \+\n\/\/                    \&quot;        RETURN doc\&quot;\;\n\/\/            Map\&lt;String\, Object\&gt; bindVars \= new MapBuilder\(\)\.put\(\&quot;value\&quot;\, s\)\.get\(\)\;\n\/\/\n\/\/            ArangoCursor\&lt;BaseDocument\&gt; cursor \= arangoDB\.db\(dbName\)\.query\(query\, bindVars\, null\,\n\/\/                    BaseDocument\.class\)\;\n\/\/            if\(cursor\.hasNext\(\)\) \{\n\/\/                BaseDocument cursor2 \= null\;\n\/\/                JSONArray searchArray \= new JSONArray\(\)\;\n\/\/                int id\=0\;\n\/\/                for \(\; cursor\.hasNext\(\)\; \) \{\n\/\/                    JSONObject searchObjectM \= new JSONObject\(\)\;\n\/\/                    cursor2 \= cursor\.next\(\)\;\n\/\/                    BaseDocument myDocument2 \= arangoDB\.db\(dbName\)\.collection\(collectionName\)\.getDocument\(cursor2\.getKey\(\)\,\n\/\/                            BaseDocument\.class\)\;\n\/\/                    id\= Integer\.parseInt\(cursor2\.getKey\(\)\)\;\n\/\/                    searchObjectM\.put\(\&quot;ID\&quot;\, id\)\;\n\/\/                    searchObjectM\.put\(\&quot;Name\&quot;\, myDocument2\.getAttribute\(\&quot;Name\&quot;\)\)\;\n\/\/                    searchObjectM\.put\(\&quot;Category\&quot;\, myDocument2\.getAttribute\(\&quot;Category\&quot;\)\)\;\n\/\/                    searchObjectM\.put\(\&quot;Profile Picture\&quot;\, myDocument2\.getAttribute\(\&quot;ProfilePicture\&quot;\)\)\;\n\/\/                    searchArray\.add\(searchObjectM\)\;\n\/\/                \}\n\/\/                searchObjectTotal\.put\(\&quot;Channel \&quot;\+id\,searchArray\)\;\n\/\/            \}\n\/\/\/\/            else\{\n\/\/                JSONArray searchArray \= new JSONArray\(\)\;\n\/\/                query \= \&quot;FOR doc IN Videos\\n\&quot; \+\n\/\/                       \/\/ \&quot;        FILTER doc\.\`title\` like \@value\\n\&quot; \+\n\/\/                        \&quot;        FILTER CONTAINS\(doc\.\`title\`\, \@value\)\&quot; \+\n\/\/                        \&quot;        RETURN doc\&quot;\;\n\/\/                bindVars \= new MapBuilder\(\)\.put\(\&quot;value\&quot;\, s\)\.get\(\)\;\n\/\/\n\/\/                cursor \= arangoDB\.db\(dbName\)\.query\(query\, bindVars\, null\,\n\/\/                        BaseDocument\.class\)\;\n\/\/                if\(cursor\.hasNext\(\)\) \{\n\/\/                    BaseDocument cursor2\=null\;\n\/\/                    int id\=0\;\n\/\/                    for \(\; cursor\.hasNext\(\)\; \) \{\n\/\/                        cursor2 \= cursor\.next\(\)\;\n\/\/                        System\.out\.println\(cursor2\.getKey\(\)\)\;\n\/\/                        JSONObject searchObjectM \= new JSONObject\(\)\;\n\/\/                        BaseDocument myDocument2 \= arangoDB\.db\(dbName\)\.collection\(\&quot;Videos\&quot;\)\.getDocument\(cursor2\.getKey\(\)\,\n\/\/                                BaseDocument\.class\)\;\n\/\/                        id\= Integer\.parseInt\(cursor2\.getKey\(\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;ID\&quot;\, id\)\;\n\/\/                        searchObjectM\.put\(\&quot;Likes\&quot;\, Integer\.parseInt\(\&quot;\&quot;\+myDocument2\.getAttribute\(\&quot;likes\&quot;\)\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Dislikes\&quot;\, Integer\.parseInt\(\&quot;\&quot;\+myDocument2\.getAttribute\(\&quot;dislikes\&quot;\)\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Views\&quot;\, Integer\.parseInt\(\&quot;\&quot;\+myDocument2\.getAttribute\(\&quot;views\&quot;\)\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Thumbnail\&quot;\, myDocument2\.getAttribute\(\&quot;thumbnail\&quot;\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Title\&quot;\, myDocument2\.getAttribute\(\&quot;title\&quot;\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Category\&quot;\, myDocument2\.getAttribute\(\&quot;category\&quot;\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Duration\&quot;\, Integer\.parseInt\(\&quot;\&quot;\+myDocument2\.getAttribute\(\&quot;duration\&quot;\)\)\)\;\n\/\/                        searchObjectM\.put\(\&quot;Date Created\&quot;\, myDocument2\.getAttribute\(\&quot;date_created\&quot;\)\)\;\n\/\/                        searchArray\.add\(searchObjectM\)\;\n\/\/                    \}\n\/\/                    searchObjectTotal\.put\(\&quot;Video \&quot;\+id\,searchArray\)\;\n\/\/                \}\n\/\/                else\{\n\/\/                    searchObjectTotal\.put\(\&quot;Not found \&quot;\,s\)\;\n\/\/                \}\n\/\/\/\/            \}\n\/\/        \} catch \(ArangoDBException e\) \{\n\/\/            System\.err\.println\(\&quot;Failed to execute query\. \&quot; \+ e\.getMessage\(\)\)\;\n\/\/        \}\n\/\/        System\.out\.println\(\&quot;Comment Object\&quot; \+ searchObjectTotal\.toString\(\)\)\;\n\/\/        return searchObjectTotal\.toString\(\)\;\n\/\/\n\/\/\n\/\/    \}\n\n    public static String createComment\(int video_id\, String text\, JSONArray likes\, JSONArray dislikes\, int user_id\, JSONArray mentions\, JSONArray replies\)\{\n        ArangoDB arangoDB \= new ArangoDB\.Builder\(\)\.build\(\)\;\n        String dbName \= \&quot;scalable\&quot;\;\n        String collectionName \= \&quot;comments\&quot;\;\n        BaseDocument myObject \= new BaseDocument\(\)\;\n        myObject\.addAttribute\(\&quot;video_id\&quot;\,video_id\)\;\n        myObject\.addAttribute\(\&quot;text\&quot;\,text\)\;\n        myObject\.addAttribute\(\&quot;likes\&quot;\,likes\)\;\n        myObject\.addAttribute\(\&quot;dislikes\&quot;\,dislikes\)\;\n        myObject\.addAttribute\(\&quot;user\&quot;\,user_id\)\;\n        myObject\.addAttribute\(\&quot;mentions\&quot;\,mentions\)\;\n        myObject\.addAttribute\(\&quot;replies\&quot;\,replies\)\;\n        try \{\n            arangoDB\.db\(dbName\)\.collection\(collectionName\)\.insertDocument\(myObject\)\;\n            System\.out\.println\(\&quot;Document created\&quot;\)\;\n        \} catch \(ArangoDBException e\) \{\n            System\.err\.println\(\&quot;Failed to create document\. \&quot; \+ e\.getMessage\(\)\)\;\n        \}\n        return \&quot;Document created\&quot;\;\n    \}\n\n    public static String deleteCommentByID\(int id\)\{\n        ArangoDB arangoDB \= new ArangoDB\.Builder\(\)\.build\(\)\;\n        String dbName \= \&quot;scalable\&quot;\;\n        String collectionName \= \&quot;comments\&quot;\;\n        try \{\n        arangoDB\.db\(dbName\)\.collection\(collectionName\)\.deleteDocument\(\&quot;\&quot;\+id\)\;\n        \}catch \(ArangoDBException e\)\{\n            System\.err\.println\(\&quot;Failed to delete document\. \&quot; \+ e\.getMessage\(\)\)\;\n        \}\n        return \&quot;Comment Deleted\&quot;\;\n    \}\n    public static String deleteReplyByID\(int comment_id\,int reply_id\)\{\n        ArangoDB arangoDB \= new ArangoDB\.Builder\(\)\.build\(\)\;\n        String dbName \= \&quot;scalable\&quot;\;\n        String collectionName \= \&quot;comments\&quot;\;\n        BaseDocument myDocument \= arangoDB\.db\(dbName\)\.collection\(collectionName\)\.getDocument\(\&quot;\&quot; \+ comment_id\,\n                BaseDocument\.class\)\;\n        try \{\n    ArrayList\&lt;JSONObject\&gt; replies \= new ArrayList\&lt;\&gt;\(\)\;\n     replies \= \(ArrayList\&lt;JSONObject\&gt;\) myDocument\.getAttribute\(\&quot;replies\&quot;\)\;\n     replies\.remove\(reply_id\)\;\n    myDocument\.updateAttribute\(\&quot;replies\&quot;\, replies\)\;\n    arangoDB\.db\(dbName\)\.collection\(collectionName\)\.deleteDocument\(\&quot;\&quot; \+ comment_id\)\;\n    arangoDB\.db\(dbName\)\.collection\(collectionName\)\.insertDocument\(myDocument\)\;\n        \}catch \(ArangoDBException e\)\{\n            System\.err\.println\(e\.getErrorMessage\(\)\)\;\n        \}\n        return \&quot;Document Updated\&quot;\;\n        \}\n\n    \}\n</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,6 +126,7 @@
         <option value="$PROJECT_DIR$/src/main/java/commands/CreateComment.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/DeleteComment.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/UpdateComment.java" />
       </list>
     </option>
   </component>
@@ -117,6 +136,17 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Comment" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="22" />
@@ -368,6 +398,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -376,7 +407,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283582" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -407,14 +438,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/GetComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../Search.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -732,26 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/GetComment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -760,13 +763,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="191" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+        <state relative-caret-position="261">
+          <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2569#2622#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/UpdateComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

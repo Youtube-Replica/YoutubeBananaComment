@@ -163,6 +163,8 @@ public class Comment {
         return "Document created";
     }
 
+
+
     public static String deleteCommentByID(int id){
         ArangoDB arangoDB = new ArangoDB.Builder().build();
         String dbName = "scalable";
@@ -180,17 +182,41 @@ public class Comment {
         String collectionName = "comments";
         BaseDocument myDocument = arangoDB.db(dbName).collection(collectionName).getDocument("" + comment_id,
                 BaseDocument.class);
-try {
+        try {
     ArrayList<JSONObject> replies = new ArrayList<>();
-     replies = (ArrayList<JSONObject>) myDocument.getAttribute("replies");
-     replies.remove(reply_id);
-    myDocument.updateAttribute("replies", replies);
-    arangoDB.db(dbName).collection(collectionName).deleteDocument("" + comment_id);
-    arangoDB.db(dbName).collection(collectionName).insertDocument(myDocument);
-}catch (ArangoDBException e){
+        replies = (ArrayList<JSONObject>) myDocument.getAttribute("replies");
+        replies.remove(reply_id);
+        myDocument.updateAttribute("replies", replies);
+        arangoDB.db(dbName).collection(collectionName).deleteDocument("" + comment_id);
+        arangoDB.db(dbName).collection(collectionName).insertDocument(myDocument);
+        }catch (ArangoDBException e){
             System.err.println(e.getErrorMessage());
-}
-        return "Document Updated";
         }
+        return "Reply Deleted";
+        }
+
+    public static String updateComment(int comment_id ,int video_id, String text, JSONArray likes, JSONArray dislikes, int user_id, JSONArray mentions, JSONArray replies){
+        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String dbName = "scalable";
+        String collectionName = "comments";
+        BaseDocument myObject = arangoDB.db(dbName).collection(collectionName).getDocument("" + comment_id,
+                BaseDocument.class);
+
+        myObject.updateAttribute("video_id",video_id);
+        myObject.updateAttribute("text",text);
+        myObject.updateAttribute("likes",likes);
+        myObject.updateAttribute("dislikes",dislikes);
+        myObject.updateAttribute("user",user_id);
+        myObject.updateAttribute("mentions",mentions);
+        myObject.updateAttribute("replies",replies);
+        try {
+            arangoDB.db(dbName).collection(collectionName).deleteDocument(""+comment_id);
+            arangoDB.db(dbName).collection(collectionName).insertDocument(myObject);
+            System.out.println("Document created");
+        } catch (ArangoDBException e) {
+            System.err.println("Failed to create document. " + e.getMessage());
+        }
+        return "Document created";
+    }
 
     }
