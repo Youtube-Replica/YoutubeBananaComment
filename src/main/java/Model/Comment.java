@@ -25,7 +25,7 @@ import org.json.simple.JSONObject;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Search {
+public class Comment {
 
     public static String getCommentByID(int id) {
         ArangoDB arangoDB = new ArangoDB.Builder().build();
@@ -75,7 +75,7 @@ public class Search {
         return commentObjectM.toString();
 
     }
-    //Search for Videos by title and for Channel by name
+    //Comment for Videos by title and for Channel by name
 //    public static String getSearch(String s) {
 //        ArangoDB arangoDB = new ArangoDB.Builder().build();
 //        String dbName = "scalable";
@@ -152,7 +152,7 @@ public class Search {
 //        } catch (ArangoDBException e) {
 //            System.err.println("Failed to execute query. " + e.getMessage());
 //        }
-//        System.out.println("Search Object" + searchObjectTotal.toString());
+//        System.out.println("Comment Object" + searchObjectTotal.toString());
 //        return searchObjectTotal.toString();
 //
 //

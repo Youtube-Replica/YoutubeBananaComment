@@ -1,5 +1,5 @@
 import Commands.Command;
-import Commands.Get.GetSearch;
+import Commands.Get.GetComment;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-public class SearchService {
+public class CommentService {
     private static final String RPC_QUEUE_NAME = "search-request";
 
     public static void main(String [] argv) {
@@ -42,7 +42,7 @@ public class SearchService {
 
                     try {
                         String message = new String(body, "UTF-8");
-                        Command cmd = new GetSearch();
+                        Command cmd = new GetComment();
                         HashMap<String, Object> props = new HashMap<String, Object>();
                         props.put("channel", channel);
                         props.put("properties", properties);
