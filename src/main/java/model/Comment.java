@@ -216,7 +216,7 @@ public class Comment {
         } catch (ArangoDBException e) {
             System.err.println("Failed to create document. " + e.getMessage());
         }
-        return "Document created";
+        return "Document updated";
     }
 
     }
