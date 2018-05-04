@@ -43,7 +43,6 @@ public class DeleteComment extends Command {
 //        String response = (String)props.get("body");
         try {
             channel.basicPublish("", properties.getReplyTo(), replyProps, response.getBytes("UTF-8"));
-            channel.basicAck(envelope.getDeliveryTag(), false);
         } catch (IOException e) {
             e.printStackTrace();
         }
