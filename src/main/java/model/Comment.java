@@ -15,7 +15,8 @@ import java.util.Map;
 public class Comment {
 
     public static String getCommentByID(int id) {
-        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String host = System.getenv("ARANGO_DB_SERVICE_HOST");
+        ArangoDB arangoDB = new ArangoDB.Builder().host(host, 8529).build();
         String dbName = "scalable";
         String collectionName = "comments";
         JSONObject commentObjectM = new JSONObject();
@@ -39,7 +40,8 @@ public class Comment {
 
     public static String getCommentsByVideoID(int id) {
         System.out.println("ID: " + id);
-        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String host = System.getenv("ARANGO_DB_SERVICE_HOST");
+        ArangoDB arangoDB = new ArangoDB.Builder().host(host, 8529).build();
         String dbName = "scalable";
         String collectionName = "comments";
         JSONObject allCommentsReturned = new JSONObject();
@@ -86,7 +88,8 @@ public class Comment {
     }
 
     public static String createComment(int video_id, String text, JSONArray likes, JSONArray dislikes, int user_id, JSONArray mentions, JSONArray replies){
-        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String host = System.getenv("ARANGO_DB_SERVICE_HOST");
+        ArangoDB arangoDB = new ArangoDB.Builder().host(host, 8529).build();
         String dbName = "scalable";
         String collectionName = "comments";
         BaseDocument myObject = new BaseDocument();
@@ -109,7 +112,8 @@ public class Comment {
 
 
     public static String deleteCommentByID(int id){
-        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String host = System.getenv("ARANGO_DB_SERVICE_HOST");
+        ArangoDB arangoDB = new ArangoDB.Builder().host(host, 8529).build();
         String dbName = "scalable";
         String collectionName = "comments";
         try {
@@ -120,7 +124,8 @@ public class Comment {
         return "Comment Deleted";
     }
     public static String deleteReplyByID(int comment_id,int reply_id){
-        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String host = System.getenv("ARANGO_DB_SERVICE_HOST");
+        ArangoDB arangoDB = new ArangoDB.Builder().host(host, 8529).build();
         String dbName = "scalable";
         String collectionName = "comments";
         BaseDocument myDocument = arangoDB.db(dbName).collection(collectionName).getDocument("" + comment_id,
@@ -139,7 +144,8 @@ public class Comment {
         }
 
     public static String updateComment(int comment_id ,int video_id, String text, JSONArray likes, JSONArray dislikes, int user_id, JSONArray mentions, JSONArray replies){
-        ArangoDB arangoDB = new ArangoDB.Builder().build();
+        String host = System.getenv("ARANGO_DB_SERVICE_HOST");
+        ArangoDB arangoDB = new ArangoDB.Builder().host(host, 8529).build();
         String dbName = "scalable";
         String collectionName = "comments";
         BaseDocument myObject = arangoDB.db(dbName).collection(collectionName).getDocument("" + comment_id,
