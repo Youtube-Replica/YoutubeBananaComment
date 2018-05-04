@@ -19,15 +19,14 @@ public class CommentService {
         final ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
 
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        String host = System.getenv("RABBIT_MQ_SERVICE_HOST");
+        factory.setHost(host);
         Connection connection = null;
         try {
             connection = factory.newConnection();
             final Channel channel = connection.createChannel();
 
             channel.queueDeclare(RPC_QUEUE_NAME, false, false, false, null);
-
-            channel.basicQos(1);
 
             System.out.println(" [x] Awaiting RPC requests");
 
@@ -72,7 +71,7 @@ public class CommentService {
                 }
             };
 
-            channel.basicConsume(RPC_QUEUE_NAME, false, consumer);
+            channel.basicConsume(RPC_QUEUE_NAME, true, consumer);
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
